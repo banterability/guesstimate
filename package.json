@@ -1,0 +1,17 @@
+{
+  "name": "stats",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.coffee",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/banterability/stats.git"
+  },
+  "author": "Jeff Long",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/banterability/stats/issues"
+  },
+  "homepage": "https://github.com/banterability/stats"
+}
