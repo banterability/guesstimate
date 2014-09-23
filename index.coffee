@@ -3,6 +3,10 @@
 class Stats
   constructor: (@list) ->
 
+  all: ->
+    mean: @mean()
+    range: @range()
+
   mean: ->
     sum = reduce @list, (memo, value) ->
       memo += value
