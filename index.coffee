@@ -7,6 +7,7 @@ class Stats
     mean: @mean()
     median: @median()
     range: @range()
+    sum: @sum()
 
   mean: ->
     sum = reduce @list, (memo, value) ->
@@ -27,6 +28,11 @@ class Stats
   range: ->
     list = @_sortedList()
     last(list) - first(list)
+
+  sum: ->
+    reduce @list, (memo, value) ->
+      memo + value
+    , 0
 
   _sortedList: ->
     @list.sort()

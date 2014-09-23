@@ -11,6 +11,7 @@ describe 'Stats', ->
       assert.expect actual.mean
       assert.expect actual.median
       assert.expect actual.range
+      assert.expect actual.sum
 
   describe 'mean', ->
     it 'provides the mean for an array', ->
@@ -30,3 +31,8 @@ describe 'Stats', ->
     it 'provides the range for an array', ->
       actual = new Stats([1,2,3,4,5,6]).range()
       assert.equal 5, actual
+
+  describe 'sum', ->
+    it 'provides the sum of items in an array', ->
+      actual = new Stats([1,2,3,4,5,6]).sum()
+      assert.equal 21, actual
