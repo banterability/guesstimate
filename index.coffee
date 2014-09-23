@@ -10,10 +10,7 @@ class Stats
     sum: @sum()
 
   mean: ->
-    sum = reduce @list, (memo, value) ->
-      memo += value
-    , 0
-    sum / @list.length
+    @sum() / @list.length
 
   median: ->
     list = @_sortedList()
