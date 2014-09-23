@@ -19,7 +19,11 @@ describe 'Stats', ->
 
   describe 'median', ->
     it 'provides the median for an array with an odd number of items', ->
-      actual = new Stats([4,4,5,6,6]).median()
+      actual = new Stats([6,4,6,5,4]).median()
+      assert.equal 5, actual
+
+    it 'provides the median for an array with an even number of items', ->
+      actual = new Stats([6,4,6,4]).median()
       assert.equal 5, actual
 
   describe 'range', ->

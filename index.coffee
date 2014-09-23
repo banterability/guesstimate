@@ -16,8 +16,13 @@ class Stats
 
   median: ->
     list = @_sortedList()
-    middleIndex = Math.round(list.length / 2) - 1
-    list[middleIndex]
+    middleIndex = (listLength = list.length + 1) / 2 - 1
+    if _isEven listLength
+      list[middleIndex]
+    else
+      leftOfMiddle = list[Math.floor(middleIndex)]
+      rightOfMiddle = list[Math.ceil(middleIndex)]
+      (leftOfMiddle + rightOfMiddle) / 2
 
   range: ->
     list = @_sortedList()
@@ -25,5 +30,8 @@ class Stats
 
   _sortedList: ->
     @list.sort()
+
+_isEven = (num) ->
+  num % 2 == 0
 
 module.exports = Stats
