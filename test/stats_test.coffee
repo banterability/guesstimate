@@ -11,6 +11,7 @@ describe 'Stats', ->
       assert.expect actual.max
       assert.expect actual.mean
       assert.expect actual.median
+      assert.expect actual.min
       assert.expect actual.range
       assert.expect actual.sum
 
@@ -32,6 +33,11 @@ describe 'Stats', ->
     it 'provides the median for an array with an even number of items', ->
       actual = new Stats([6,4,6,4]).median()
       assert.equal 5, actual
+
+  describe 'min', ->
+    it 'provides the minimum value in an array', ->
+      actual = new Stats([2,5,1,3,6,4]).min()
+      assert.equal 1, actual
 
   describe 'range', ->
     it 'provides the range for an array', ->

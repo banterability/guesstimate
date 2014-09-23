@@ -1,4 +1,4 @@
-{first, last, max, reduce} = require 'underscore'
+{first, last, max, min, reduce} = require 'underscore'
 
 class Stats
   constructor: (@list) ->
@@ -7,6 +7,7 @@ class Stats
     max: @max()
     mean: @mean()
     median: @median()
+    min: @min()
     range: @range()
     sum: @sum()
 
@@ -25,6 +26,9 @@ class Stats
       leftOfMiddle = list[Math.floor(middleIndex)]
       rightOfMiddle = list[Math.ceil(middleIndex)]
       (leftOfMiddle + rightOfMiddle) / 2
+
+  min: ->
+    min @list
 
   range: ->
     list = @_sortedList()
