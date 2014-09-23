@@ -8,10 +8,16 @@ describe 'Stats', ->
   describe 'all', ->
     it 'provides all statistics for an array', ->
       actual = new Stats([1,2,3,4,5,6]).all()
+      assert.expect actual.max
       assert.expect actual.mean
       assert.expect actual.median
       assert.expect actual.range
       assert.expect actual.sum
+
+  describe 'max', ->
+    it 'provides the maximum value in an array', ->
+      actual = new Stats([2,5,1,3,6,4]).max()
+      assert.equal 6, actual
 
   describe 'mean', ->
     it 'provides the mean for an array', ->

@@ -1,13 +1,17 @@
-{first, last, reduce} = require 'underscore'
+{first, last, max, reduce} = require 'underscore'
 
 class Stats
   constructor: (@list) ->
 
   all: ->
+    max: @max()
     mean: @mean()
     median: @median()
     range: @range()
     sum: @sum()
+
+  max: ->
+    max @list
 
   mean: ->
     @sum() / @list.length
