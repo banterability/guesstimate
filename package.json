@@ -21,7 +21,6 @@
     "test": "test"
   },
   "dependencies": {
-    "assertive": "~1.4.0",
     "underscore": "^1.7.0"
   },
   "scripts": {
