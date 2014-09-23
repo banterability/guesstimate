@@ -5,6 +5,7 @@ class Stats
 
   all: ->
     mean: @mean()
+    median: @median()
     range: @range()
 
   mean: ->
@@ -12,6 +13,11 @@ class Stats
       memo += value
     , 0
     sum / @list.length
+
+  median: ->
+    list = @_sortedList()
+    middleIndex = Math.round(list.length / 2) - 1
+    list[middleIndex]
 
   range: ->
     list = @_sortedList()
