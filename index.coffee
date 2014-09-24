@@ -1,4 +1,4 @@
-{first, last, max, min, reduce} = require 'underscore'
+{countBy, first, last, max, min, pairs, reduce} = require 'underscore'
 
 class Stats
   constructor: (@list) ->
@@ -8,6 +8,7 @@ class Stats
     mean: @mean()
     median: @median()
     min: @min()
+    mode: @mode()
     range: @range()
     sum: @sum()
 
@@ -29,6 +30,11 @@ class Stats
 
   min: ->
     min @list
+
+  mode: ->
+    frequency = pairs countBy @list
+    maxValue = max frequency, (value) -> value[1]
+    parseInt(maxValue[0], 10)
 
   range: ->
     list = @_sortedList()

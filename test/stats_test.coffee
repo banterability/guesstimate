@@ -12,6 +12,7 @@ describe 'Stats', ->
       assert.expect actual.mean
       assert.expect actual.median
       assert.expect actual.min
+      assert.expect actual.mode
       assert.expect actual.range
       assert.expect actual.sum
 
@@ -38,6 +39,11 @@ describe 'Stats', ->
     it 'provides the minimum value in an array', ->
       actual = new Stats([2,5,1,3,6,4]).min()
       assert.equal 1, actual
+
+  describe 'mode', ->
+    it 'provides the mode of an array', ->
+      actual = new Stats([1,2,2,3,4]).mode()
+      assert.equal 2, actual
 
   describe 'range', ->
     it 'provides the range for an array', ->
