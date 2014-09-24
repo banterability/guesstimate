@@ -11,5 +11,6 @@ So far:
 * mean
 * median
 * minimum
+* mode
 * range
 * sum
