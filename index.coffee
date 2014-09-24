@@ -1,4 +1,4 @@
-{countBy, first, last, max, min, pairs, reduce} = require 'underscore'
+{countBy, filter, first, last, map, max, min, pairs, reduce, uniq} = require 'underscore'
 
 class Stats
   constructor: (@list) ->
@@ -33,8 +33,12 @@ class Stats
 
   mode: ->
     frequency = pairs countBy @list
-    maxValue = max frequency, (value) -> value[1]
-    parseInt(maxValue[0], 10)
+    [maxValue, maxCount] = max frequency, (value) -> value[1]
+    allMostFrequentPair = filter frequency, (value) -> value[1] == maxCount
+    allMostFrequentValues = map allMostFrequentPair, (value) -> parseInt value[0], 10
+
+    return undefined if allMostFrequentValues.length == uniq(@list).length
+    parseInt(maxValue, 10)
 
   range: ->
     list = @_sortedList()

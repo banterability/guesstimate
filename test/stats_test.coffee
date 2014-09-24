@@ -45,6 +45,15 @@ describe 'Stats', ->
       actual = new Stats([1,2,2,3,4]).mode()
       assert.equal 2, actual
 
+    describe 'special cases', ->
+      it 'finds no mode if no values repeat', ->
+        actual = new Stats([1,2,3,4]).mode()
+        assert.falsey actual
+
+      it 'finds no mode if all values have equal frequency', ->
+        actual = new Stats([1,1,2,2,3,3]).mode()
+        assert.falsey actual
+
   describe 'range', ->
     it 'provides the range for an array', ->
       actual = new Stats([1,2,3,4,5,6]).range()
