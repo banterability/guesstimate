@@ -7,14 +7,14 @@ describe 'Stats', ->
 
   describe 'all', ->
     it 'provides all statistics for an array', ->
-      actual = new Stats([1,2,3,4,5,6]).all()
-      assert.expect actual.max
-      assert.expect actual.mean
-      assert.expect actual.median
-      assert.expect actual.min
-      assert.expect actual.mode
-      assert.expect actual.range
-      assert.expect actual.sum
+      actual = Object.keys new Stats([1,2,3,4,5,6]).all()
+      assert.include 'max', actual
+      assert.include 'mean', actual
+      assert.include 'median', actual
+      assert.include 'min', actual
+      assert.include 'mode', actual
+      assert.include 'range', actual
+      assert.include 'sum', actual
 
   describe 'max', ->
     it 'provides the maximum value in an array', ->
