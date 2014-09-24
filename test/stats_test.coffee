@@ -54,6 +54,14 @@ describe 'Stats', ->
         actual = new Stats([1,1,2,2,3,3]).mode()
         assert.falsey actual
 
+      it 'supports bimodal lists', ->
+        actual = new Stats([1,2,2,3,4,4,5]).mode()
+        assert.deepEqual [2, 4], actual
+
+      it 'supports multimodal lists', ->
+        actual = new Stats([1,1,2,2,3,3,4]).mode()
+        assert.deepEqual [1,2,3], actual
+
   describe 'range', ->
     it 'provides the range for an array', ->
       actual = new Stats([1,2,3,4,5,6]).range()

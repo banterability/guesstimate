@@ -38,7 +38,8 @@ class Stats
     allMostFrequentValues = map allMostFrequentPair, (value) -> parseInt value[0], 10
 
     return undefined if allMostFrequentValues.length == uniq(@list).length
-    parseInt(maxValue, 10)
+    return allMostFrequentValues[0] if allMostFrequentValues.length == 1
+    allMostFrequentValues
 
   range: ->
     list = @_sortedList()
