@@ -14,6 +14,7 @@ describe 'Stats', ->
       assert.include 'min', actual
       assert.include 'mode', actual
       assert.include 'range', actual
+      assert.include 'standardDeviation', actual
       assert.include 'sum', actual
 
   describe 'max', ->
@@ -66,6 +67,11 @@ describe 'Stats', ->
     it 'provides the range for an array', ->
       actual = new Stats([1,2,3,4,5,6]).range()
       assert.equal 5, actual
+
+  describe 'standard deviation', ->
+    it 'provides the range for an array', ->
+      actual = new Stats([65,66,66,62,62,60,58]).standardDeviation()
+      assert.equal 2.864276807966203, actual
 
   describe 'sum', ->
     it 'provides the sum of items in an array', ->

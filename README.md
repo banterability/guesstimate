@@ -13,4 +13,5 @@ So far:
 * minimum
 * mode
 * range
+* standard deviation
 * sum

@@ -10,6 +10,7 @@ class Stats
     min: @min()
     mode: @mode()
     range: @range()
+    standardDeviation: @standardDeviation()
     sum: @sum()
 
   max: ->
@@ -44,6 +45,14 @@ class Stats
   range: ->
     list = @_sortedList()
     last(list) - first(list)
+
+  standardDeviation: ->
+    mean = @mean()
+    totalVariance = 0
+    for value in @list
+      totalVariance += Math.pow(value - mean, 2)
+
+    Math.sqrt totalVariance / @list.length
 
   sum: ->
     reduce @list, (memo, value) ->
