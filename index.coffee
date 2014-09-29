@@ -12,6 +12,7 @@ class Stats
     range: @range()
     standardDeviation: @standardDeviation()
     sum: @sum()
+    variance: @variance()
 
   max: ->
     max @list

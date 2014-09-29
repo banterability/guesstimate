@@ -16,6 +16,7 @@ describe 'Stats', ->
       assert.include 'range', actual
       assert.include 'standardDeviation', actual
       assert.include 'sum', actual
+      assert.include 'variance', actual
 
   describe 'max', ->
     it 'provides the maximum value in an array', ->
