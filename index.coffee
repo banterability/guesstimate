@@ -47,12 +47,7 @@ class Stats
     last(list) - first(list)
 
   standardDeviation: ->
-    mean = @mean()
-    totalVariance = 0
-    for value in @list
-      totalVariance += Math.pow(value - mean, 2)
-
-    Math.sqrt totalVariance / @list.length
+    Math.sqrt @variance()
 
   sum: ->
     reduce @list, (memo, value) ->
