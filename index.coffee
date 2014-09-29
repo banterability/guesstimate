@@ -57,12 +57,11 @@ class Stats
 
   variance: ->
     mean = @mean()
+    totalDifference = reduce @list, (memo, value) ->
+      memo + Math.pow(value - mean, 2)
+    , 0
 
-    difference = 0
-    for value in @list
-      difference += Math.pow(value - mean, 2)
-
-    difference / @list.length
+    totalDifference / @list.length
 
   _sortedList: ->
     @list.sort()
