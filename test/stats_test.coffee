@@ -69,7 +69,7 @@ describe 'Stats', ->
       assert.equal 5, actual
 
   describe 'standard deviation', ->
-    it 'provides the range for an array', ->
+    it 'provides the standard deviation for an array', ->
       actual = new Stats([65,66,66,62,62,60,58]).standardDeviation()
       assert.equal 2.864276807966203, actual
 
