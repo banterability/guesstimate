@@ -77,3 +77,8 @@ describe 'Stats', ->
     it 'provides the sum of items in an array', ->
       actual = new Stats([1,2,3,4,5,6]).sum()
       assert.equal 21, actual
+
+  describe 'variance', ->
+    it 'provides the variance for an array', ->
+      actual = new Stats([65,66,66,62,62,60,58]).variance()
+      assert.equal 8.204081632653061, actual

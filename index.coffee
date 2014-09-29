@@ -59,6 +59,15 @@ class Stats
       memo + value
     , 0
 
+  variance: ->
+    mean = @mean()
+
+    difference = 0
+    for value in @list
+      difference += Math.pow(value - mean, 2)
+
+    difference / @list.length
+
   _sortedList: ->
     @list.sort()
 

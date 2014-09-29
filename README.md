@@ -15,3 +15,4 @@ So far:
 * range
 * standard deviation
 * sum
+* variance
