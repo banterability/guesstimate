@@ -25,5 +25,11 @@
   },
   "scripts": {
     "test": "mocha"
-  }
+  },
+  "description": "A few basic statistical functions",
+  "keywords": [
+    "math",
+    "statistics",
+    "stats"
+  ]
 }
