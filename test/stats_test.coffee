@@ -1,5 +1,5 @@
 assert = require 'assertive'
-Stats = require '../index'
+Stats = require '../lib'
 
 describe 'Stats', ->
   it 'exists', ->
