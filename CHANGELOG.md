@@ -1,3 +1,8 @@
+1.0.0
+-----
+* First public release
+* Distribute as compiled JS
+
 0.2.0
 -----
 * Calculate standard deviation and variance
