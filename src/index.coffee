@@ -1,6 +1,6 @@
 {countBy, filter, first, last, map, max, min, pairs, reduce, uniq} = require 'underscore'
 
-class Stats
+class Guesstimate
   constructor: (@list) ->
 
   all: ->
@@ -69,4 +69,4 @@ class Stats
 _isEven = (num) ->
   num % 2 == 0
 
-module.exports = Stats
+module.exports = Guesstimate

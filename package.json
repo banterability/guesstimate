@@ -1,18 +1,18 @@
 {
-  "name": "stats",
+  "name": "guesstimate",
   "version": "0.2.0",
   "private": true,
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/banterability/stats.git"
+    "url": "git://github.com/banterability/guesstimate.git"
   },
   "author": "Jeff Long",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/banterability/stats/issues"
+    "url": "https://github.com/banterability/guesstimate/issues"
   },
-  "homepage": "https://github.com/banterability/stats",
+  "homepage": "https://github.com/banterability/guesstimate",
   "devDependencies": {
     "assertive": "^1.4.0",
     "coffee-script": "^1.8.0",
